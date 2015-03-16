@@ -34,6 +34,7 @@ import android.opengl.GLUtils;
 */
 public class CurlMesh {
 
+
 	// Flag for rendering some lines used for developing. Shows
 	// curl position and one for the direction from the
 	// position given. Comes handy once playing around with different
