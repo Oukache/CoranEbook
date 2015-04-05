@@ -1,4 +1,4 @@
-package com.oukache.coranebook.core;
+package com.oukache.coranebook.util;
 
 /**
  * Created by Oukache on 16/03/2015.
