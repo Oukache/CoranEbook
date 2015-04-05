@@ -22,10 +22,23 @@ public class CSourate implements Parcelable, Comparable<CSourate> {
 		_ayah = in.readInt();
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		return (
+				(o != null) &&
+				(o.getClass() == CSourate.class) &&
+				(((CSourate)o)._sourate == _sourate) &&
+				((CSourate)o)._ayah == _ayah
+			);
+	}
 
 	@Override
 	public int compareTo(CSourate another) {
-		return 0;
+		if (this.equals(another)) {
+			return 0;
+		} else {
+			return (_ayah < another._ayah) ? -1 : 1;
+		}
 	}
 
 	@Override
@@ -35,6 +48,21 @@ public class CSourate implements Parcelable, Comparable<CSourate> {
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
-
+		dest.writeInt(this._sourate);
+		dest.writeInt(this._ayah);
 	}
+
+	public static final Creator<CSourate> CREATOR = new Creator<CSourate>() {
+
+		@Override
+		public CSourate createFromParcel(Parcel source) {
+			return new CSourate(source);
+		}
+
+		@Override
+		public CSourate[] newArray(int size) {
+			return new CSourate[size];
+		}
+	};
+
 }
