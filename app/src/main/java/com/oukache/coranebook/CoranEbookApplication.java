@@ -2,8 +2,6 @@ package com.oukache.coranebook;
 
 import android.app.Application;
 
-import dagger.ObjectGraph;
-
 /**
  * Created by Oukache on 14/04/2015.
  */
