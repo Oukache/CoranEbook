@@ -13,4 +13,4 @@ you are free to use parts of the CoranEbook Android code in your application wit
 - your app cannot make money from ads or from sales. there are many reasons for this.
 
 
-##maintenance in progress... :)
+##under development ... :)
