@@ -6,6 +6,7 @@ import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 
+import com.oukache.coranebook.CoranEbookApplication;
 import com.oukache.coranebook.R;
 import com.oukache.coranebook.ui.fragments.FavorisFragment;
 import com.oukache.coranebook.ui.fragments.SettingsFragment;
@@ -13,50 +14,52 @@ import com.oukache.coranebook.ui.fragments.ShareFragment;
 import com.oukache.coranebook.ui.fragments.SourateFragment;
 import com.oukache.coranebook.util.Constants;
 
+import butterknife.InjectView;
+
 /**
  * Created by Oukache on 16/03/2015.
  */
 public class CoranBaseActivity extends ActionBarActivity {
 
-	private SlidingPaneLayout slidingPaneLayout;
+	@InjectView(R.id.sliding_pane_layout) SlidingPaneLayout slidingPaneLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_base);
-		init();
-		setNewPage(new SourateFragment(), Constants.FRAGMENT_SOURATE);
+		// inject
+		((CoranEbookApplication) getApplication()).component().inject(this);
+		showFragment(new SourateFragment());
 	}
 
-	private void init() {
-		slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.sliding_pane_layout);
+	public void showFragment(Fragment fragment) {
+		showFragment(fragment, false);
 	}
 
-	public void setNewPage(Fragment fragment, int pageIndex) {
+	public void showFragment(Fragment fragment, boolean retain) {
 		if (slidingPaneLayout.isOpen()) {
 			slidingPaneLayout.closePane();
 		}
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.layout_frame, fragment, "currentFragment")
 				.commit();
-
 	}
 
 	// TODO: utilisation de ViewPager pour les Views Sourate et Juz'
 	public void onSourate(View v) {
-		setNewPage(new SourateFragment(), Constants.FRAGMENT_SOURATE);
+		showFragment(new SourateFragment(), false);
 	}
 
 	public void onFavoris(View v) {
-		setNewPage(new FavorisFragment(), Constants.FRAGMENT_FAVORIS);
+		showFragment(new FavorisFragment(), true);
 	}
 
 	public void onShare(View v) {
-		setNewPage(new ShareFragment(), Constants.FRAGMENT_SHARE);
+		showFragment(new ShareFragment(), true);
 	}
 
 	public void onSettings(View v) {
-		setNewPage(new SettingsFragment(), Constants.FRAGMENT_SETTINGS);
+		showFragment(new SettingsFragment(), true);
 	}
 
 	public void onSliding(View v) {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- title bar -->
+	<item name="title_bar_layout" type="id" />
+	<item name="title_bar_img_slide" type="id" />
+	<item name="title_bar_tv_title" type="id" />
+	<item name="title_bar_imv" type="id" />
+
+</resources>

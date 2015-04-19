@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.view.KeyEvent;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
+import com.oukache.coranebook.CoranEbookApplication;
 import com.oukache.coranebook.R;
 import com.oukache.coranebook.util.CLogger;
 
@@ -20,19 +23,16 @@ import butterknife.InjectView;
 public class SplashScreen extends Activity {
 
 	private Thread _splashThread = null;
-	private Context _context = null;
-
+	private boolean _bExit = false;
 	@InjectView(R.id.screen_layout) LinearLayout _screen;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
-
-		//supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-		//getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
 		setContentView(R.layout.splash_screen);
-		_context = SplashScreen.this;
+
+		((CoranEbookApplication) getApplication()).component().inject(this);
 		ButterKnife.inject(this);
 
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
@@ -45,8 +45,8 @@ public class SplashScreen extends Activity {
 				} catch(Exception e) {
 					CLogger.error("Splash-Screen error : " + e.getMessage());
 				} finally {
-					if (_context != null) {
-						Intent intent = new Intent(_context, CoranBaseActivity.class);
+					if (!_bExit) {
+						Intent intent = new Intent(SplashScreen.this, CoranBaseActivity.class);
 						startActivity(intent);
 					}
 					finish();
@@ -64,7 +64,14 @@ public class SplashScreen extends Activity {
 	 */
 	public void onBackPressed() {
 		super.onBackPressed();
-		_context = null;
+		_bExit = true;
+		try {
+			_splashThread.join(100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			_splashThread = null;
+		}
 	}
 
 	@Override

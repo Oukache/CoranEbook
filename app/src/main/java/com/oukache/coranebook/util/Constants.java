@@ -5,8 +5,13 @@ package com.oukache.coranebook.util;
  */
 public class Constants {
 
+	public static final int NETWORK_ERROR = 1;
+	public static final int JSON_ERROR = 2;
+
+	/*
 	public static final int FRAGMENT_SOURATE = 0;
 	public static final int FRAGMENT_FAVORIS = 1;
 	public static final int FRAGMENT_SHARE = 2;
 	public static final int FRAGMENT_SETTINGS = 3;
+	*/
 }
