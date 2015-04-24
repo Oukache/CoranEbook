@@ -7,4 +7,12 @@
 	<item name="title_bar_tv_title" type="id" />
 	<item name="title_bar_imv" type="id" />
 
+	<!-- slide pane layout -->
+	<item name="sourate_btn" type="id" />
+	<item name="favoris_btn" type="id" />
+	<item name="doua_btn" type="id" />
+	<item name="hadiths_btn" type="id" />
+	<item name="settings_btn" type="id" />
+	<item name="separator_v" type="id" />
+
 </resources>

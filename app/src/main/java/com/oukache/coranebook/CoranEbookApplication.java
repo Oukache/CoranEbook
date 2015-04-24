@@ -3,7 +3,7 @@ package com.oukache.coranebook;
 import android.app.Application;
 import android.location.LocationManager;
 
-import com.oukache.coranebook.ui.activities.CoranBaseActivity;
+import com.oukache.coranebook.ui.activities.MainActivity;
 import com.oukache.coranebook.ui.activities.SplashScreen;
 
 import javax.inject.Inject;
@@ -21,7 +21,7 @@ public class CoranEbookApplication extends Application {
 	public interface CoranEbookComponent {
 		void inject(CoranEbookApplication application);
 		void inject(SplashScreen splashScreen);
-		void inject(CoranBaseActivity baseActivity);
+		void inject(MainActivity baseActivity);
 		// TODO : inject other activity & fragments
 	}
 

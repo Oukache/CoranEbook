@@ -1,11 +1,8 @@
 package com.oukache.coranebook.ui.activities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.view.KeyEvent;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
@@ -46,7 +43,7 @@ public class SplashScreen extends Activity {
 					CLogger.error("Splash-Screen error : " + e.getMessage());
 				} finally {
 					if (!_bExit) {
-						Intent intent = new Intent(SplashScreen.this, CoranBaseActivity.class);
+						Intent intent = new Intent(SplashScreen.this, MainActivity.class);
 						startActivity(intent);
 					}
 					finish();

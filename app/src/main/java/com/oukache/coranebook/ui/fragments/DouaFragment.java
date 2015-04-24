@@ -14,23 +14,22 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * Created by Oukache on 14/04/2015.
+ * Created by Oukache on 24/04/2015.
  */
-public class FavorisFragment extends Fragment {
+public class DouaFragment extends Fragment {
 
-	@InjectView(R.id.title_bar_layout)
-	LinearLayout _titleBar;
+	@InjectView(R.id.title_bar_layout) LinearLayout _titleBar;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		View root = inflater.inflate(R.layout.fragment_favoris, container, false);
+		View root = inflater.inflate(R.layout.fragment_doua, container, false);
 		ButterKnife.inject(this, root);
 
 
-		((TextView) _titleBar.findViewById(R.id.title_bar_tv_title)).setText("Favoris");
+		((TextView) _titleBar.findViewById(R.id.title_bar_tv_title)).setText("Doua");
 
 		return root;
 	}

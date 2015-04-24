@@ -22,97 +22,59 @@
 				android:orientation="vertical" >
 
 				<Button
-					android:id="@+id/button"
+					android:id="@id/sourate_btn"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
 					android:background="@drawable/bg_select"
-					android:drawableTop="@drawable/sl_bt_dashboard"
 					android:paddingBottom="20dp"
 					android:paddingTop="20dp"
-					android:text="Dashboard"
+					android:text="Sourate"
 					android:textColor="#ffffff"
-					android:onClick="onDashBoard"/>
-
-				<TextView
-					android:id="@+id/textView"
-					android:layout_width="125dp"
-					android:layout_height="2dp"
-					android:background="#26262e"
-					android:gravity="center_horizontal"
-					android:textAppearance="?android:attr/textAppearanceSmall" />
+					android:onClick="onSourate"/>
 
 				<Button
-					android:id="@+id/button2"
+					android:id="@id/favoris_btn"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
 					android:background="@drawable/bg_select"
-					android:drawableTop="@drawable/sl_bt_sources"
 					android:paddingBottom="20dp"
 					android:paddingTop="20dp"
-					android:text="Sources"
+					android:text="Favoris"
 					android:textColor="#ffffff"
-					android:onClick="onSources"/>
-
-				<TextView
-					android:id="@+id/textView2"
-					android:layout_width="125dp"
-					android:layout_height="2dp"
-					android:layout_gravity="center_horizontal"
-					android:background="#26262e"
-					android:gravity="center_horizontal"
-					android:textAppearance="?android:attr/textAppearanceSmall" />
+					android:onClick="onFavoris"/>
 
 				<Button
-					android:id="@+id/button3"
+					android:id="@id/doua_btn"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
 					android:background="@drawable/bg_select"
-					android:drawableTop="@drawable/sl_bt_visitors"
 					android:paddingBottom="20dp"
 					android:paddingTop="20dp"
-					android:text="Visitors"
+					android:text="Doua"
 					android:textColor="#ffffff"
-					android:onClick="onVisitors"/>
-
-				<TextView
-					android:id="@+id/textView3"
-					android:layout_width="125dp"
-					android:layout_height="2dp"
-					android:layout_gravity="center_horizontal"
-					android:background="#26262e"
-					android:gravity="center_horizontal"
-					android:textAppearance="?android:attr/textAppearanceSmall" />
+					android:onClick="onDoua"/>
 
 				<Button
-					android:id="@+id/button4"
+					android:id="@id/hadiths_btn"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
 					android:background="@drawable/bg_select"
-					android:drawableTop="@drawable/sl_bt_sites"
 					android:paddingBottom="20dp"
 					android:paddingTop="20dp"
-					android:text="Sites"
-					android:textColor="#ffffff" />
-
-				<TextView
-					android:id="@+id/textView4"
-					android:layout_width="125dp"
-					android:layout_height="2dp"
-					android:layout_gravity="center_horizontal"
-					android:background="#26262e"
-					android:gravity="center_horizontal"
-					android:textAppearance="?android:attr/textAppearanceSmall" />
+					android:text="Hadiths"
+					android:textColor="#ffffff"
+					android:onClick="onHadiths"/>
 
 				<Button
-					android:id="@+id/button5"
+					android:id="@id/settings_btn"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
 					android:background="@drawable/bg_select"
-					android:drawableTop="@drawable/sl_bt_logout"
 					android:paddingBottom="20dp"
 					android:paddingTop="20dp"
-					android:text="Logout"
-					android:textColor="#ffffff" />
+					android:text="Settings"
+					android:textColor="#ffffff"
+					android:onClick="onSettings"/>
 			</LinearLayout>
 		</ScrollView>
 	</LinearLayout>

@@ -2,33 +2,40 @@ package com.oukache.coranebook.ui.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 
 import com.oukache.coranebook.CoranEbookApplication;
 import com.oukache.coranebook.R;
+import com.oukache.coranebook.ui.fragments.DouaFragment;
 import com.oukache.coranebook.ui.fragments.FavorisFragment;
+import com.oukache.coranebook.ui.fragments.HadithsFragment;
 import com.oukache.coranebook.ui.fragments.SettingsFragment;
-import com.oukache.coranebook.ui.fragments.ShareFragment;
 import com.oukache.coranebook.ui.fragments.SourateFragment;
-import com.oukache.coranebook.util.Constants;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
  * Created by Oukache on 16/03/2015.
  */
-public class CoranBaseActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity {
 
 	@InjectView(R.id.sliding_pane_layout) SlidingPaneLayout slidingPaneLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_base);
+
+		getSupportActionBar().hide();
+		setContentView(R.layout.activity_main);
+
 		// inject
 		((CoranEbookApplication) getApplication()).component().inject(this);
+		ButterKnife.inject(this);
+
 		showFragment(new SourateFragment());
 	}
 
@@ -40,9 +47,15 @@ public class CoranBaseActivity extends ActionBarActivity {
 		if (slidingPaneLayout.isOpen()) {
 			slidingPaneLayout.closePane();
 		}
-		getSupportFragmentManager().beginTransaction()
-				.replace(R.id.layout_frame, fragment, "currentFragment")
-				.commit();
+
+		FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
+
+		if (retain) {
+			tr.addToBackStack(null);
+		}
+
+		tr.replace(R.id.layout_frame, fragment, "currentFragment");
+		tr.commit();
 	}
 
 	// TODO: utilisation de ViewPager pour les Views Sourate et Juz'
@@ -54,8 +67,12 @@ public class CoranBaseActivity extends ActionBarActivity {
 		showFragment(new FavorisFragment(), true);
 	}
 
-	public void onShare(View v) {
-		showFragment(new ShareFragment(), true);
+	public void onHadiths(View v) {
+		showFragment(new HadithsFragment(), true);
+	}
+
+	public void onDoua(View v) {
+		showFragment(new DouaFragment(), true);
 	}
 
 	public void onSettings(View v) {
