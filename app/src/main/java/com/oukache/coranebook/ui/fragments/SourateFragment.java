@@ -10,15 +10,15 @@ import android.widget.TextView;
 
 import com.oukache.coranebook.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by Oukache on 14/04/2015.
  */
 public class SourateFragment extends Fragment {
 
-	@InjectView(R.id.title_bar_layout) LinearLayout _titleBar;
+	@BindView(R.id.title_bar_layout) LinearLayout _titleBar;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,7 +26,7 @@ public class SourateFragment extends Fragment {
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		View root = inflater.inflate(R.layout.fragment_sourate, container, false);
-		ButterKnife.inject(this, root);
+		ButterKnife.bind(this, root);
 
 
 		((TextView) _titleBar.findViewById(R.id.title_bar_tv_title)).setText("Sourates");
@@ -37,6 +37,5 @@ public class SourateFragment extends Fragment {
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();
-		ButterKnife.reset(this);
 	}
 }

@@ -6,12 +6,12 @@ import android.support.annotation.NonNull;
 /**
  * Created by Oukache on 05/04/2015.
  */
-public class CCoranTask<T> extends AsyncTask<Void, Void, T> {
-	private ICoranBackgroundWork<T> _worker;
-	private ICoranTaskResponse<T> _callback;
+public class CETask<T> extends AsyncTask<Void, Void, T> {
+	private ICEBackgroundWork<T> _worker;
+	private ICETaskResponse<T> _callback;
 	private Exception _exception;
 
-	public CCoranTask(@NonNull ICoranBackgroundWork<T> worker, @NonNull ICoranTaskResponse<T> callback) {
+	public CETask(@NonNull ICEBackgroundWork<T> worker, @NonNull ICETaskResponse<T> callback) {
 		_worker = worker;
 		_callback = callback;
 	}

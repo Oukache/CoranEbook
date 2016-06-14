@@ -5,7 +5,7 @@ package com.oukache.coranebook.core.api;
  *
  * coran ws response codes
  */
-public enum CoranResponseCodes {
+public enum CEResponseCodes {
 
 	NETWORK_ERROR(-2),
 	FAILURE(-1),
@@ -13,7 +13,7 @@ public enum CoranResponseCodes {
 
 	private int _code;
 
-	CoranResponseCodes(int val) {
+	CEResponseCodes(int val) {
 		_code = val;
 	}
 

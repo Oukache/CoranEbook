@@ -14,12 +14,12 @@ import dagger.Component;
 /**
  * Created by Oukache on 14/04/2015.
  */
-public class CoranEbookApplication extends Application {
+public class CEApplication extends Application {
 
 	@Singleton
 	@Component(modules = AndroidModule.class)
 	public interface CoranEbookComponent {
-		void inject(CoranEbookApplication application);
+		void inject(CEApplication application);
 		void inject(SplashScreen splashScreen);
 		void inject(MainActivity baseActivity);
 		// TODO : inject other activity & fragments

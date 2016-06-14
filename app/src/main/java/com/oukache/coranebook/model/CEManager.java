@@ -9,7 +9,7 @@ import javax.inject.Singleton;
 /**
  * Created by Oukache on 05/04/2015.
  */
-public class CCoranManager {
+public class CEManager {
 
 	//private static CCoranManager _instance = null;
 

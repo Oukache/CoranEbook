@@ -2,7 +2,7 @@
 		  package="com.oukache.coranebook">
 
 	<application android:allowBackup="true"
-				 android:name=".CoranEbookApplication"
+				 android:name=".CEApplication"
 				 android:label="@string/app_name"
 				 android:icon="@mipmap/ic_launcher"
 				 android:theme="@style/AppTheme">

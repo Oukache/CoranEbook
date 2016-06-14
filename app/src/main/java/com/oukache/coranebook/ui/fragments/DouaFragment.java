@@ -10,15 +10,15 @@ import android.widget.TextView;
 
 import com.oukache.coranebook.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by Oukache on 24/04/2015.
  */
 public class DouaFragment extends Fragment {
 
-	@InjectView(R.id.title_bar_layout) LinearLayout _titleBar;
+	@BindView(R.id.title_bar_layout) LinearLayout _titleBar;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,18 +26,15 @@ public class DouaFragment extends Fragment {
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		View root = inflater.inflate(R.layout.fragment_doua, container, false);
-		ButterKnife.inject(this, root);
-
+		ButterKnife.bind(this, root);
 
 		((TextView) _titleBar.findViewById(R.id.title_bar_tv_title)).setText("Doua");
-
 		return root;
 	}
 
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();
-		ButterKnife.reset(this);
 	}
 
 }

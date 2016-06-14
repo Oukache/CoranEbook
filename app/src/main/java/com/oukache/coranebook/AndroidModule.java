@@ -1,6 +1,5 @@
 package com.oukache.coranebook;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -8,8 +7,6 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
-
-import com.oukache.coranebook.util.CNetworkState;
 
 import dagger.Module;
 import dagger.Provides;
@@ -21,9 +18,9 @@ import javax.inject.Singleton;
 @Module
 public class AndroidModule {
 
-	private final CoranEbookApplication _application;
+	private final CEApplication _application;
 
-	public AndroidModule(CoranEbookApplication application) {
+	public AndroidModule(CEApplication application) {
 		_application = application;
 	}
 

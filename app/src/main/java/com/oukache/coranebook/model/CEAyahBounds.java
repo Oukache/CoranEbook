@@ -6,13 +6,13 @@ import android.support.annotation.NonNull;
 /**
  * Created by Oukache on 05/04/2015.
  */
-public class CAyahBounds {
+public class CEAyahBounds {
 	private int _line;
 	private int _position;
 	private RectF _limits;
 
-	public CAyahBounds(Integer line, Integer pos, int left,
-					   int top, int right, int bottom) {
+	public CEAyahBounds(Integer line, Integer pos, int left,
+						int top, int right, int bottom) {
 		_line = line;
 		_position = pos;
 		_limits = new RectF(left, top, right, bottom);

@@ -6,11 +6,11 @@ import android.net.NetworkInfo;
 /**
  * Created by Oukache on 19/04/2015.
  */
-public class CNetworkState {
+public class CENetworkState {
 
 	private final ConnectivityManager _connectivityManager;
 
-	public CNetworkState(ConnectivityManager connectivityManager) {
+	public CENetworkState(ConnectivityManager connectivityManager) {
 		_connectivityManager = connectivityManager;
 	}
 

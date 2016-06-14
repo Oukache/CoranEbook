@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.oukache.coranebook.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -18,18 +19,14 @@ import butterknife.InjectView;
  */
 public class SettingsFragment extends Fragment {
 
-	@InjectView(R.id.title_bar_layout)
-	LinearLayout _titleBar;
+	@BindView(R.id.title_bar_layout) LinearLayout _titleBar;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
-
 		View root = inflater.inflate(R.layout.fragment_settings, container, false);
-		ButterKnife.inject(this, root);
-
-
+		ButterKnife.bind(this, root);
 		((TextView) _titleBar.findViewById(R.id.title_bar_tv_title)).setText("Settings");
 
 		return root;
@@ -38,7 +35,6 @@ public class SettingsFragment extends Fragment {
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();
-		ButterKnife.reset(this);
 	}
 
 }

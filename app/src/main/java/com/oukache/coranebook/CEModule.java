@@ -8,7 +8,7 @@ import dagger.Module;
 
 
 @Module
-public class CoranebookModule {
+public class CEModule {
 
 
 }

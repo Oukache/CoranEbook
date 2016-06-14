@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Oukache on 05/04/2015.
  */
-public class CAyah implements Serializable {
+public class CEAyah implements Serializable {
 
 	private int _sourate = 0;
 	private int _ayah = 0;
@@ -13,10 +13,10 @@ public class CAyah implements Serializable {
 	private String _traduction = null;
 	private boolean _isArabic = false;
 
-	public CAyah(){
+	public CEAyah(){
 	}
 
-	public CAyah(int sourate, int ayah) {
+	public CEAyah(int sourate, int ayah) {
 		_sourate = sourate;
 		_ayah = ayah;
 	}

@@ -6,7 +6,7 @@ import android.util.Log;
  * Created by Oukache on 14/04/2015.
  * @brief	Gestion des logs de l'application
  */
-public class CLogger {
+public class CELogger {
 
 	private static final String CORANEBOOK_TAG = "CoranEbook";
 	public static final boolean ENABLE_LOG = true;
