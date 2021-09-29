@@ -3,8 +3,8 @@ package com.oukache.coranebook;
 import android.app.Application;
 import android.location.LocationManager;
 
-import com.oukache.coranebook.ui.activities.MainActivity;
-import com.oukache.coranebook.ui.activities.SplashScreen;
+import com.oukache.coranebook.presentation.MainActivity;
+import com.oukache.coranebook.presentation.SplashScreen;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
